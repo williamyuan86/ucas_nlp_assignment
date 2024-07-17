@@ -23,7 +23,7 @@ class StopOnTokens(StoppingCriteria):
         last_token_id = input_ids[0][-1].item()
         last_token = tokenizer.decode([last_token_id])
         print(f"Token ID: {last_token_id}, Token: {last_token}")
-        stop_ids = [524]
+        stop_ids = [524,10174]
         for stop_id in stop_ids:
             if input_ids[0][-1] == stop_id:
                 return True
